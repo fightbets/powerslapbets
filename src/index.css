@@ -8,8 +8,8 @@
   --color-midnight: #0A0A0A;
   --color-hotpink: #FF2D78;
   --color-hotpink-dark: #CC2460;
-  --color-darkbg: #0D0D0D;
-  --color-surface: #1A1A1A;
+  --color-darkbg: #080810;
+  --color-surface: #12142A;
   --color-textwhite: #F5F5F5;
   --color-muted: #888888;
   --font-display: 'Bebas Neue', sans-serif;
@@ -60,7 +60,7 @@ body {
 }
 
 .hero-gradient {
-  background: linear-gradient(135deg, #0A0A0A 0%, #0a0a1e 50%, #0a1040 100%);
+  background: linear-gradient(135deg, #050510 0%, #0a1040 40%, #0038FF 100%);
 }
 
 .card-hover {
@@ -68,9 +68,22 @@ body {
 }
 .card-hover:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(0, 56, 255, 0.15);
+  box-shadow: 0 12px 40px rgba(0, 56, 255, 0.25);
 }
 
 .slap-glow {
-  text-shadow: 0 0 20px rgba(0, 56, 255, 0.4);
+  text-shadow: 0 0 30px rgba(0, 56, 255, 0.6), 0 0 60px rgba(0, 56, 255, 0.2);
+}
+
+/* Blue ambient glow on header */
+header {
+  box-shadow: 0 1px 20px rgba(0, 56, 255, 0.15);
+}
+
+/* Geometric blue accents like the official site */
+.blue-triangle {
+  width: 0; height: 0;
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent;
+  border-bottom: 70px solid rgba(0, 56, 255, 0.15);
 }
