@@ -13,13 +13,13 @@ export default function TagPage() {
   return (
     <div className="max-w-6xl mx-auto px-4 py-8">
       <nav className="flex items-center gap-2 text-sm text-muted mb-6">
-        <Link to="/" className="hover:text-lime transition">Home</Link>
+        <Link to="/" className="hover:text-slapblue-light transition">Home</Link>
         <span>/</span>
         <span className="text-gray-400">Tag: {tag}</span>
       </nav>
 
       <div className="flex items-center gap-3 mb-8">
-        <h1 className="font-display text-3xl md:text-4xl text-lime uppercase">
+        <h1 className="font-display text-3xl md:text-4xl text-slapblue-light uppercase">
           #{tag}
         </h1>
         <span className="bg-hotpink text-white text-sm font-bold px-3 py-1 rounded-full">
@@ -33,7 +33,7 @@ export default function TagPage() {
             key={t}
             to={`/tag/${t}`}
             className={`tag no-underline transition ${
-              t === tag ? 'bg-lime text-midnight' : 'bg-surface text-muted hover:bg-gray-800'
+              t === tag ? 'bg-slapblue text-midnight' : 'bg-surface text-muted hover:bg-gray-800'
             }`}
           >
             {t}

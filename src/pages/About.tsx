@@ -4,7 +4,7 @@ export default function About() {
   return (
     <div className="max-w-3xl mx-auto px-4 py-8">
       <nav className="flex items-center gap-2 text-sm text-muted mb-6">
-        <Link to="/" className="hover:text-lime transition">Home</Link>
+        <Link to="/" className="hover:text-slapblue-light transition">Home</Link>
         <span>/</span>
         <span className="text-gray-400">About</span>
       </nav>
@@ -12,7 +12,7 @@ export default function About() {
       <div className="text-center mb-10">
         <span className="text-6xl block mb-4">🫲</span>
         <h1 className="font-display text-4xl md:text-5xl text-textwhite mb-3">
-          ABOUT <span className="text-lime">POWER</span><span className="text-hotpink">SLAP</span><span className="text-textwhite">BETS</span>
+          ABOUT <span className="text-slapblue-light">POWER</span><span className="text-hotpink">SLAP</span><span className="text-textwhite">BETS</span>
         </h1>
         <p className="text-xl text-muted">Yes, This Is a Real Sport Now</p>
       </div>
@@ -60,14 +60,14 @@ export default function About() {
         </blockquote>
       </div>
 
-      <div className="mt-10 bg-midnight rounded-2xl p-8 text-center border border-lime/20">
+      <div className="mt-10 bg-midnight rounded-2xl p-8 text-center border border-slapblue/20">
         <h3 className="font-display text-2xl mb-3">
-          <span className="text-lime">JOIN</span>{' '}
+          <span className="text-slapblue-light">JOIN</span>{' '}
           <span className="text-hotpink">THE SLAP</span>
         </h3>
         <p className="text-muted mb-4">Follow us. Share us. Question your life choices with us.</p>
         <div className="flex justify-center gap-3">
-          <a href="#" className="bg-lime hover:bg-lime-dark text-midnight px-5 py-2.5 rounded-full font-bold text-sm transition no-underline">
+          <a href="#" className="bg-slapblue hover:bg-slapblue-dark text-midnight px-5 py-2.5 rounded-full font-bold text-sm transition no-underline">
             Twitter/X
           </a>
           <a href="#" className="bg-hotpink hover:bg-hotpink-dark text-white px-5 py-2.5 rounded-full font-bold text-sm transition no-underline">

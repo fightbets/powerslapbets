@@ -23,7 +23,7 @@ export default function Article() {
   return (
     <div className="max-w-3xl mx-auto px-4 py-8">
       <nav className="flex items-center gap-2 text-sm text-muted mb-6">
-        <Link to="/" className="hover:text-lime transition">Home</Link>
+        <Link to="/" className="hover:text-slapblue-light transition">Home</Link>
         <span>/</span>
         <span className="text-gray-400 truncate">{post.title}</span>
       </nav>
@@ -31,7 +31,7 @@ export default function Article() {
       <header className="mb-8">
         <div className="flex flex-wrap gap-2 mb-3">
           {post.tags.map(tag => (
-            <Link key={tag} to={`/tag/${tag}`} className="tag bg-lime/10 text-lime hover:bg-lime hover:text-midnight transition no-underline">
+            <Link key={tag} to={`/tag/${tag}`} className="tag bg-slapblue/10 text-slapblue-light hover:bg-slapblue hover:text-midnight transition no-underline">
               {tag}
             </Link>
           ))}
@@ -66,17 +66,17 @@ export default function Article() {
 
       <div className="mt-10 grid md:grid-cols-2 gap-4">
         {prevPost && (
-          <Link to={`/post/${prevPost.slug}`} className="bg-surface rounded-xl p-5 border border-gray-800 hover:border-lime/30 transition no-underline group">
+          <Link to={`/post/${prevPost.slug}`} className="bg-surface rounded-xl p-5 border border-gray-800 hover:border-slapblue/30 transition no-underline group">
             <span className="text-xs text-muted uppercase tracking-wider">Previous</span>
-            <p className="font-display text-lg text-textwhite group-hover:text-lime transition mt-1">
+            <p className="font-display text-lg text-textwhite group-hover:text-slapblue-light transition mt-1">
               {prevPost.emoji} {prevPost.title}
             </p>
           </Link>
         )}
         {nextPost && (
-          <Link to={`/post/${nextPost.slug}`} className="bg-surface rounded-xl p-5 border border-gray-800 hover:border-lime/30 transition no-underline group md:text-right">
+          <Link to={`/post/${nextPost.slug}`} className="bg-surface rounded-xl p-5 border border-gray-800 hover:border-slapblue/30 transition no-underline group md:text-right">
             <span className="text-xs text-muted uppercase tracking-wider">Next</span>
-            <p className="font-display text-lg text-textwhite group-hover:text-lime transition mt-1">
+            <p className="font-display text-lg text-textwhite group-hover:text-slapblue-light transition mt-1">
               {nextPost.emoji} {nextPost.title}
             </p>
           </Link>

@@ -18,7 +18,7 @@ export default function Home() {
 
       <section>
         <div className="flex items-center gap-3 mb-6">
-          <h2 className="font-display text-2xl text-lime uppercase">Latest Slaps</h2>
+          <h2 className="font-display text-2xl text-slapblue-light uppercase">Latest Slaps</h2>
           <div className="flex-1 h-px bg-gray-800" />
         </div>
         <div className="grid gap-4">

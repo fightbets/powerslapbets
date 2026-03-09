@@ -2,12 +2,13 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-  --color-lime: #CCFF00;
-  --color-lime-dark: #A3CC00;
+  --color-slapblue: #0038FF;
+  --color-slapblue-dark: #002AD4;
+  --color-slapblue-light: #3366FF;
   --color-midnight: #0A0A0A;
   --color-hotpink: #FF2D78;
   --color-hotpink-dark: #CC2460;
-  --color-darkbg: #121212;
+  --color-darkbg: #0D0D0D;
   --color-surface: #1A1A1A;
   --color-textwhite: #F5F5F5;
   --color-muted: #888888;
@@ -29,24 +30,24 @@ body {
 
 ::-webkit-scrollbar { width: 8px; }
 ::-webkit-scrollbar-track { background: var(--color-darkbg); }
-::-webkit-scrollbar-thumb { background: var(--color-lime); border-radius: 4px; }
+::-webkit-scrollbar-thumb { background: var(--color-slapblue); border-radius: 4px; }
 
 .prose { color: #ddd; }
-.prose h2 { font-family: var(--font-display); text-transform: uppercase; color: var(--color-lime); }
+.prose h2 { font-family: var(--font-display); text-transform: uppercase; color: var(--color-slapblue-light); }
 .prose h3 { font-family: var(--font-display); color: var(--color-textwhite); }
 .prose blockquote {
-  border-left-color: var(--color-hotpink) !important;
-  background: #1e1e1e;
+  border-left-color: var(--color-slapblue) !important;
+  background: #111428;
   padding: 1rem 1.5rem;
   border-radius: 0 8px 8px 0;
   font-style: italic;
   color: #ccc;
 }
-.prose strong { color: var(--color-lime); }
+.prose strong { color: var(--color-slapblue-light); }
 .prose a { color: var(--color-hotpink); }
-.prose a:hover { color: var(--color-lime); }
+.prose a:hover { color: var(--color-slapblue-light); }
 .prose table { color: #ddd; }
-.prose th { color: var(--color-lime); }
+.prose th { color: var(--color-slapblue-light); }
 
 .tag {
   display: inline-block;
@@ -59,7 +60,7 @@ body {
 }
 
 .hero-gradient {
-  background: linear-gradient(135deg, #0A0A0A 0%, #1a0a1a 50%, #2d0a20 100%);
+  background: linear-gradient(135deg, #0A0A0A 0%, #0a0a1e 50%, #0a1040 100%);
 }
 
 .card-hover {
@@ -67,9 +68,9 @@ body {
 }
 .card-hover:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(204, 255, 0, 0.1);
+  box-shadow: 0 12px 40px rgba(0, 56, 255, 0.15);
 }
 
 .slap-glow {
-  text-shadow: 0 0 20px rgba(204, 255, 0, 0.3);
+  text-shadow: 0 0 20px rgba(0, 56, 255, 0.4);
 }

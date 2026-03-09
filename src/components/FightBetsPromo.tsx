@@ -23,23 +23,23 @@ export default function FightBetsPromo({ variant = 'banner' }: { variant?: 'bann
 
   if (variant === 'article') {
     return (
-      <div className="my-8 bg-gradient-to-r from-midnight via-surface to-midnight rounded-xl p-6 text-center border border-lime/20">
+      <div className="my-8 bg-gradient-to-r from-midnight via-surface to-midnight rounded-xl p-6 text-center border border-slapblue/20">
         <div className="flex items-center justify-center gap-2 mb-2">
           <FBLogo size="md" />
-          <p className="text-lime font-display text-sm uppercase tracking-widest">From the PowerSlapBets crew</p>
+          <p className="text-slapblue-light font-display text-sm uppercase tracking-widest">From the PowerSlapBets crew</p>
         </div>
         <h3 className="text-textwhite font-display text-2xl md:text-3xl mb-2">
           Think You Know Slaps?
         </h3>
         <p className="text-muted text-lg mb-1 italic">"{tagline}"</p>
         <p className="text-muted text-sm mb-4">
-          Bet on fights with <span className="text-lime font-bold">0% fees</span> on FightBets. Powered by Polymarket.
+          Bet on fights with <span className="text-slapblue-light font-bold">0% fees</span> on FightBets. Powered by Polymarket.
         </p>
         <a
           href={FIGHTBETS_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 bg-lime hover:bg-lime-dark text-midnight px-6 py-2.5 rounded-full font-bold text-sm transition no-underline"
+          className="inline-flex items-center gap-2 bg-slapblue hover:bg-slapblue-dark text-midnight px-6 py-2.5 rounded-full font-bold text-sm transition no-underline"
         >
           <FBLogo size="sm" />
           Start Betting — It's Free
@@ -50,7 +50,7 @@ export default function FightBetsPromo({ variant = 'banner' }: { variant?: 'bann
 
   if (variant === 'inline') {
     return (
-      <div className="bg-surface rounded-xl p-5 border-2 border-dashed border-lime/30 hover:border-lime transition">
+      <div className="bg-surface rounded-xl p-5 border-2 border-dashed border-slapblue/30 hover:border-slapblue transition">
         <div className="flex items-center gap-4">
           <FBLogo size="lg" />
           <div className="flex-1">
@@ -63,7 +63,7 @@ export default function FightBetsPromo({ variant = 'banner' }: { variant?: 'bann
                 href={FIGHTBETS_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 bg-lime hover:bg-lime-dark text-midnight px-4 py-1.5 rounded-full font-bold text-xs transition no-underline"
+                className="inline-flex items-center gap-1.5 bg-slapblue hover:bg-slapblue-dark text-midnight px-4 py-1.5 rounded-full font-bold text-xs transition no-underline"
               >
                 <FBLogo size="sm" />
                 Bet on FightBets
@@ -77,12 +77,12 @@ export default function FightBetsPromo({ variant = 'banner' }: { variant?: 'bann
   }
 
   return (
-    <div className="relative overflow-hidden bg-midnight rounded-2xl p-8 md:p-10 text-center border border-lime/10">
-      <div className="absolute -top-10 -right-10 w-40 h-40 border-4 border-lime/5 rotate-45 rounded-lg" />
+    <div className="relative overflow-hidden bg-midnight rounded-2xl p-8 md:p-10 text-center border border-slapblue/10">
+      <div className="absolute -top-10 -right-10 w-40 h-40 border-4 border-slapblue/5 rotate-45 rounded-lg" />
       <div className="absolute -bottom-8 -left-8 w-32 h-32 border-4 border-hotpink/5 rotate-12 rounded-lg" />
 
       <div className="relative z-10">
-        <p className="text-lime font-display text-xs uppercase tracking-[0.2em] mb-2">Presented by</p>
+        <p className="text-slapblue-light font-display text-xs uppercase tracking-[0.2em] mb-2">Presented by</p>
         <div className="flex items-center justify-center gap-3 mb-3">
           <FBLogo size="lg" />
           <h2 className="font-display text-4xl md:text-5xl text-textwhite">
@@ -93,17 +93,17 @@ export default function FightBetsPromo({ variant = 'banner' }: { variant?: 'bann
           {tagline}
         </p>
         <div className="flex flex-wrap justify-center gap-4 text-sm text-muted mb-6">
-          <span className="flex items-center gap-1"><span className="text-lime">&#10003;</span> 0% Fees</span>
-          <span className="flex items-center gap-1"><span className="text-lime">&#10003;</span> Powered by Polymarket</span>
-          <span className="flex items-center gap-1"><span className="text-lime">&#10003;</span> Bet with USDC</span>
-          <span className="flex items-center gap-1"><span className="text-lime">&#10003;</span> No KYC Hassle</span>
+          <span className="flex items-center gap-1"><span className="text-slapblue-light">&#10003;</span> 0% Fees</span>
+          <span className="flex items-center gap-1"><span className="text-slapblue-light">&#10003;</span> Powered by Polymarket</span>
+          <span className="flex items-center gap-1"><span className="text-slapblue-light">&#10003;</span> Bet with USDC</span>
+          <span className="flex items-center gap-1"><span className="text-slapblue-light">&#10003;</span> No KYC Hassle</span>
         </div>
         <div className="flex flex-col sm:flex-row justify-center gap-3">
           <a
             href={FIGHTBETS_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 bg-lime hover:bg-lime-dark text-midnight px-8 py-3 rounded-full font-bold text-sm transition no-underline"
+            className="inline-flex items-center justify-center gap-2 bg-slapblue hover:bg-slapblue-dark text-midnight px-8 py-3 rounded-full font-bold text-sm transition no-underline"
           >
             <FBLogo size="sm" />
             Start Betting — 0% Fees
