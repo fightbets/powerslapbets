@@ -50,7 +50,7 @@ export default function FightBetsPromo({ variant = 'banner' }: { variant?: 'bann
 
   if (variant === 'inline') {
     return (
-      <div className="bg-surface rounded-xl p-5 border-2 border-dashed border-slapblue/30 hover:border-slapblue transition">
+      <div className="bg-surface rounded-xl p-5 border-2 border-dashed border-slapblue/30 hover:border-slapblue transition animate-border-pulse">
         <div className="flex items-center gap-4">
           <FBLogo size="lg" />
           <div className="flex-1">
@@ -76,10 +76,24 @@ export default function FightBetsPromo({ variant = 'banner' }: { variant?: 'bann
     )
   }
 
+  // Banner variant — dramatic with animated border and triangles
   return (
-    <div className="relative overflow-hidden bg-midnight rounded-2xl p-8 md:p-10 text-center border border-slapblue/10">
-      <div className="absolute -top-10 -right-10 w-40 h-40 border-4 border-slapblue/5 rotate-45 rounded-lg" />
-      <div className="absolute -bottom-8 -left-8 w-32 h-32 border-4 border-hotpink/5 rotate-12 rounded-lg" />
+    <div className="relative overflow-hidden bg-midnight rounded-2xl p-8 md:p-10 text-center border border-slapblue/20 animate-border-pulse-strong">
+      {/* Decorative geometric elements */}
+      <div className="absolute -top-10 -right-10 w-40 h-40 border-4 border-slapblue/10 rotate-45 rounded-lg" />
+      <div className="absolute -bottom-8 -left-8 w-32 h-32 border-4 border-hotpink/10 rotate-12 rounded-lg" />
+      <div
+        className="geo-triangle w-16 h-20 top-8 left-12 animate-float-triangle"
+        style={{ '--tri-rotate': '25deg' } as React.CSSProperties}
+      />
+      <div
+        className="geo-triangle w-10 h-12 bottom-16 right-20 animate-float-triangle-slow"
+        style={{ '--tri-rotate': '-15deg' } as React.CSSProperties}
+      />
+      <div
+        className="geo-triangle w-8 h-10 top-1/2 right-8 animate-float-triangle"
+        style={{ '--tri-rotate': '40deg' } as React.CSSProperties}
+      />
 
       <div className="relative z-10">
         <p className="text-slapblue-light font-display text-xs uppercase tracking-[0.2em] mb-2">Presented by</p>
@@ -103,7 +117,7 @@ export default function FightBetsPromo({ variant = 'banner' }: { variant?: 'bann
             href={FIGHTBETS_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 bg-slapblue hover:bg-slapblue-dark text-midnight px-8 py-3 rounded-full font-bold text-sm transition no-underline"
+            className="animate-cta-glow inline-flex items-center justify-center gap-2 bg-slapblue hover:bg-slapblue-dark text-midnight px-10 py-3.5 rounded-full font-bold text-base transition no-underline"
           >
             <FBLogo size="sm" />
             Start Betting — 0% Fees
@@ -112,7 +126,7 @@ export default function FightBetsPromo({ variant = 'banner' }: { variant?: 'bann
             href={FIGHTBETS_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-surface hover:bg-gray-800 text-textwhite px-8 py-3 rounded-full font-bold text-sm transition no-underline"
+            className="bg-surface hover:bg-gray-800 text-textwhite px-10 py-3.5 rounded-full font-bold text-base transition no-underline border border-gray-700 hover:border-slapblue/30"
           >
             Browse Fight Markets
           </a>

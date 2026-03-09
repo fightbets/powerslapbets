@@ -33,7 +33,7 @@ export default function Header() {
             href="https://twitter.com/intent/tweet?text=PowerSlapBets%20🫲%20The%20slappiest%20blog&url=https://powerslapbets.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-slapblue text-midnight px-3 py-1.5 rounded-full text-xs font-bold hover:bg-slapblue-dark transition"
+            className="animate-share-pulse bg-slapblue text-midnight px-4 py-1.5 rounded-full text-xs font-bold hover:bg-slapblue-dark transition"
           >
             Share 🫲
           </a>
@@ -42,6 +42,7 @@ export default function Header() {
         <button
           className="md:hidden text-white text-2xl bg-transparent border-none cursor-pointer"
           onClick={() => setMenuOpen(!menuOpen)}
+          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
         >
           {menuOpen ? '✕' : '☰'}
         </button>
@@ -56,6 +57,9 @@ export default function Header() {
           <Link to="/about" onClick={() => setMenuOpen(false)} className="text-gray-300 hover:text-slapblue-light">About</Link>
         </nav>
       )}
+
+      {/* Gradient underline */}
+      <div className="header-gradient-line" />
     </header>
   )
 }

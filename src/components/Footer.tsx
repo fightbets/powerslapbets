@@ -5,8 +5,22 @@ export default function Footer() {
   const tags = getAllTags()
 
   return (
-    <footer className="bg-midnight text-muted mt-16 border-t border-slapblue/10">
-      <div className="max-w-6xl mx-auto px-4 py-12">
+    <footer className="bg-midnight text-muted mt-16 border-t border-slapblue/10 relative overflow-hidden">
+      {/* Decorative geometric triangles */}
+      <div
+        className="geo-triangle w-20 h-24 top-8 right-[10%] animate-float-triangle-slow opacity-60"
+        style={{ '--tri-rotate': '30deg' } as React.CSSProperties}
+      />
+      <div
+        className="geo-triangle w-12 h-14 bottom-12 left-[15%] animate-float-triangle opacity-40"
+        style={{ '--tri-rotate': '-20deg' } as React.CSSProperties}
+      />
+      <div
+        className="geo-triangle w-8 h-10 top-1/2 left-[80%] animate-float-triangle-slow opacity-30"
+        style={{ '--tri-rotate': '55deg' } as React.CSSProperties}
+      />
+
+      <div className="max-w-6xl mx-auto px-4 py-12 relative z-10">
         <div className="grid md:grid-cols-3 gap-8">
           <div>
             <div className="flex items-center gap-2 mb-3">

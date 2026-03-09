@@ -24,6 +24,19 @@ body {
   min-height: 100vh;
 }
 
+/* Noise/grain texture overlay for premium dark feel */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+}
+
 .font-display {
   font-family: var(--font-display);
 }
@@ -64,7 +77,7 @@ body {
 }
 
 .card-hover {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 .card-hover:hover {
   transform: translateY(-4px);
@@ -86,4 +99,167 @@ header {
   border-left: 40px solid transparent;
   border-right: 40px solid transparent;
   border-bottom: 70px solid rgba(0, 56, 255, 0.15);
+}
+
+/* ========================================
+   ANIMATED KEYFRAMES & EFFECTS
+   ======================================== */
+
+/* Pulsing blue border glow */
+@keyframes borderPulse {
+  0%, 100% { border-color: rgba(0, 56, 255, 0.15); box-shadow: 0 0 20px rgba(0, 56, 255, 0.05); }
+  50% { border-color: rgba(0, 56, 255, 0.4); box-shadow: 0 0 30px rgba(0, 56, 255, 0.15); }
+}
+
+@keyframes borderPulseStrong {
+  0%, 100% { border-color: rgba(0, 56, 255, 0.2); box-shadow: 0 0 30px rgba(0, 56, 255, 0.1); }
+  50% { border-color: rgba(0, 56, 255, 0.6); box-shadow: 0 0 50px rgba(0, 56, 255, 0.25); }
+}
+
+/* Subtle share button pulse */
+@keyframes sharePulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(0, 56, 255, 0.5); }
+  50% { box-shadow: 0 0 0 6px rgba(0, 56, 255, 0); }
+}
+
+/* Neon text glow pulse for featured */
+@keyframes glowPulse {
+  0%, 100% { text-shadow: 0 0 30px rgba(0, 56, 255, 0.6), 0 0 60px rgba(0, 56, 255, 0.2); }
+  50% { text-shadow: 0 0 40px rgba(0, 56, 255, 0.8), 0 0 80px rgba(0, 56, 255, 0.35), 0 0 120px rgba(0, 56, 255, 0.1); }
+}
+
+/* Ticker scroll */
+@keyframes tickerScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Floating triangle drift */
+@keyframes floatTriangle {
+  0%, 100% { transform: translateY(0) rotate(var(--tri-rotate, 0deg)); opacity: 0.12; }
+  50% { transform: translateY(-8px) rotate(calc(var(--tri-rotate, 0deg) + 5deg)); opacity: 0.2; }
+}
+
+@keyframes floatTriangleSlow {
+  0%, 100% { transform: translateY(0) rotate(var(--tri-rotate, 0deg)); opacity: 0.08; }
+  50% { transform: translateY(-12px) rotate(calc(var(--tri-rotate, 0deg) - 8deg)); opacity: 0.15; }
+}
+
+/* CTA glow animation */
+@keyframes ctaGlow {
+  0%, 100% { box-shadow: 0 0 20px rgba(0, 56, 255, 0.3), inset 0 0 20px rgba(0, 56, 255, 0.05); }
+  50% { box-shadow: 0 0 40px rgba(0, 56, 255, 0.5), inset 0 0 30px rgba(0, 56, 255, 0.1); }
+}
+
+/* Utility classes for animations */
+.animate-border-pulse {
+  animation: borderPulse 3s ease-in-out infinite;
+}
+
+.animate-border-pulse-strong {
+  animation: borderPulseStrong 2.5s ease-in-out infinite;
+}
+
+.animate-share-pulse {
+  animation: sharePulse 2s ease-in-out infinite;
+}
+
+.animate-glow-pulse {
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+.animate-ticker {
+  animation: tickerScroll 30s linear infinite;
+}
+
+.animate-float-triangle {
+  animation: floatTriangle 4s ease-in-out infinite;
+}
+
+.animate-float-triangle-slow {
+  animation: floatTriangleSlow 6s ease-in-out infinite;
+}
+
+.animate-cta-glow {
+  animation: ctaGlow 3s ease-in-out infinite;
+}
+
+/* ========================================
+   GEOMETRIC TRIANGLE DECORATIVE ELEMENTS
+   ======================================== */
+
+/* Scattered triangle via clip-path */
+.geo-triangle {
+  position: absolute;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  background: rgba(0, 56, 255, 0.12);
+  pointer-events: none;
+}
+
+.geo-triangle-outline {
+  position: absolute;
+  width: 0; height: 0;
+  border-left: var(--tri-size, 25px) solid transparent;
+  border-right: var(--tri-size, 25px) solid transparent;
+  border-bottom: calc(var(--tri-size, 25px) * 1.7) solid transparent;
+  border-bottom-color: rgba(0, 56, 255, 0.1);
+  pointer-events: none;
+}
+
+/* Blue ambient surface lighting */
+.surface-glow {
+  position: relative;
+}
+.surface-glow::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(0, 56, 255, 0.08) 0%, transparent 50%, rgba(0, 56, 255, 0.04) 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Left accent bar for article cards on hover */
+.accent-bar-hover {
+  position: relative;
+}
+.accent-bar-hover::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  bottom: 8px;
+  width: 3px;
+  background: var(--color-slapblue);
+  border-radius: 0 3px 3px 0;
+  transform: scaleY(0);
+  transition: transform 0.25s ease;
+}
+.accent-bar-hover:hover::before {
+  transform: scaleY(1);
+}
+
+/* Section divider with triangle accent */
+.section-divider {
+  position: relative;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0, 56, 255, 0.3), rgba(0, 56, 255, 0.5), rgba(0, 56, 255, 0.3), transparent);
+}
+.section-divider::after {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0; height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 8px solid var(--color-slapblue);
+}
+
+/* Header gradient underline */
+.header-gradient-line {
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, var(--color-slapblue) 30%, var(--color-hotpink) 70%, transparent 100%);
 }
