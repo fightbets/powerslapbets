@@ -12,7 +12,19 @@ export default function Article() {
 
   useEffect(() => {
     window.scrollTo(0, 0)
-  }, [slug])
+    if (post) {
+      document.title = `${post.title} — PowerSlapBets`
+      document.querySelector('meta[name="description"]')?.setAttribute('content', post.subtitle)
+      document.querySelector('meta[property="og:title"]')?.setAttribute('content', `${post.title} — PowerSlapBets`)
+      document.querySelector('meta[property="og:description"]')?.setAttribute('content', post.subtitle)
+      document.querySelector('meta[property="og:url"]')?.setAttribute('content', `https://powerslapbets.com/post/${post.slug}`)
+      document.querySelector('meta[name="twitter:title"]')?.setAttribute('content', `${post.title} — PowerSlapBets`)
+      document.querySelector('meta[name="twitter:description"]')?.setAttribute('content', post.subtitle)
+    }
+    return () => {
+      document.title = "PowerSlapBets — The Internet's Slappiest Blog"
+    }
+  }, [slug, post])
 
   if (!post) return <Navigate to="/" replace />
 
